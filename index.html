@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shree Choice Playworld | Magical Toys for Growing Minds</title>
+    <meta name="description" content="India's most trusted toy store for educational, safe, and premium toys. Shop Lego, Soft Toys, and STEM kits." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://esm.sh">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              brand: ['"Fredoka One"', 'cursive'],
+              heading: ['Quicksand', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+              quicksand: ['Quicksand', 'sans-serif'],
+            },
+            colors: {
+              'brand-primary': '#1A56DB', // Brighter, more optimistic blue
+              'brand-secondary': '#F43F5E', // Vibrant Coral/Rose
+              'brand-accent': '#FBBF24', // Sunny Yellow
+              
+              // New Semantic Colors
+              'primary': '#1A56DB',
+              'secondary': '#F43F5E',
+              'accent': '#FBBF24',
+              'neutral': '#F8FAFC',
+              'base': '#FFFFFF',
+              'text-main': '#1E293B',
+              'text-light': '#64748B',
+
+              // Old colors for compatibility if needed, but should be phased out
+              'play-yellow': '#FBBF24',
+              'play-blue': '#60A5FA',
+              'play-green': '#34D399',
+              'play-red': '#F43F5E',
+              'text-primary': '#1E293B',
+              'text-secondary': '#64748B',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'bounce-in': 'bounce-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both',
+              'fade-in': 'fade-in 0.5s ease-out forwards',
+              'shimmer': 'shimmer 1.5s infinite linear',
+              'slide-in-up': 'slide-in-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              'bounce-in': {
+                '0%': { opacity: '0', transform: 'scale(0.3)' },
+                '50%': { opacity: '1', transform: 'scale(1.05)' },
+                '70%': { transform: 'scale(0.9)' },
+                '100%': { transform: 'scale(1)' },
+              },
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' }
+              },
+              'slide-in-up': {
+                '0%': { transform: 'translateY(50px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^18.2.0/",
+    "react/": "https://esm.sh/react@^18.2.0/",
+    "react": "https://esm.sh/react@^18.2.0",
+    "framer-motion": "https://esm.sh/framer-motion@10.16.4",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.3"
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #F8FAFC; min-height: 100vh; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+  .clay-panel { background: #FFFFFF; border-radius: 24px; box-shadow: 0 10px 40px -10px rgba(15, 76, 129, 0.08); border: 1px solid rgba(255, 255, 255, 0.5); }
+  .clay-card { background: #FFFFFF; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid transparent; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .clay-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+  .clay-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+  .clay-btn:hover { transform: translateY(-2px); filter: brightness(105%); }
+  .clay-btn:active { transform: translateY(0) scale(0.98); }
+  .nav-glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(226, 232, 240, 0.7); }
+  .clay-check { appearance: none; -webkit-appearance: none; height: 20px; width: 20px; background-color: #F1F5F9; border-radius: 6px; border: 2px solid #E2E8F0; cursor: pointer; position: relative; transition: all 0.2s ease; }
+  .clay-check:hover { border-color: #1A56DB; }
+  .clay-check:checked { background-color: #1A56DB; border-color: #1A56DB; }
+  .clay-check:checked::after { content: ''; position: absolute; top: 2px; left: 6px; width: 5px; height: 10px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .clay-input {
+    appearance: none;
+    background-color: #F8FAFC;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #1E293B;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .clay-input:focus, .clay-input:focus-within {
+    outline: none;
+    border-color: #1A56DB;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  .clay-input::placeholder {
+    color: #94A3B8;
+    font-weight: 500;
+  }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="font-sans text-text-main antialiased selection:bg-brand-primary/20 selection:text-brand-primary">
+    <div id="root"></div>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
